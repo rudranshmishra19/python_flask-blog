@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static',filename='assets/img/post-bg-p.webp')}}')">
+          
+        
+            <div class="container position-relative px-5 px-lg-5">
+                <div class="row gx-5 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h2>Admin Panel</h2>
+                            <span class="subheading">Manage your post and content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <!-- <div class="site-heading">   -->
+          <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+              <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Post preview-->
+                
+             
+               
+               
+                <h1>Basic action</h1>
+                 <a href="/dashboard"><button class="btn btn-primary">Dashboard Home</button></a>
+                 <a href="/logout"><button class="btn btn-primary">Logout</button></a>  
+                 <hr>
+                <h2>Add/Edit posts</h2>
+                <form id="contactForm" action="/edit/{{post.sno}}" method="POST">
+                    <div class="form-floating mb-3">
+                        <input 
+                            class="form-control" 
+                            id="title" 
+                            name="title" 
+                            type="text" 
+                            placeholder="title" 
+                            value="{{post.title}}"
+                            required
+                        />
+                        <label for="title">Title</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input 
+                            class="form-control" 
+                            id="tag_line" 
+                            name="tag_line" 
+                            type="text" 
+                            placeholder="Tag_line" 
+                            value="{{post.tag_line}}"
+                            required
+                        />
+                        <label for="tag_line">Tag_line</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input 
+                            class="form-control" 
+                            id="slug" 
+                            name="slug" 
+                            type="text" 
+                            placeholder="Slug" 
+                            value="{{post.slug}}"
+                            required
+                        />
+                        <label for="slug">Slug</label>
+                    </div>
+                   
+                    <div class="form-floating mb-3">
+                        <textarea 
+                            class="form-control" 
+                            id="content" 
+                            name="content" 
+                            type="text"
+                            placeholder="content" 
+                            style="height: 12rem" 
+                            
+                            required
+                            >{{post.content}}></textarea>
+                        <label for="content">Content</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input 
+                            class="form-control" 
+                            id="img_file" 
+                            name="img_file" 
+                            placeholder="img_file" 
+                            value="{{post.img_file}}"
+                           
+                          
+                        >
+                        <label for="img_file">Img_file</label>
+                    </div>
+                    <br />
+                    <!-- Submit success message (Optional) -->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message (Optional) -->
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <!-- Submit Button-->
+                    <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+                </form>
+                   
+                    <!-- Pager-->
+                   
+            </div>
+        </div>
+       
+      
+{% endblock %}
