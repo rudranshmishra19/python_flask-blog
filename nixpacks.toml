@@ -1,5 +1,3 @@
-[start]
-cmd = "python app.py"
 
 [phases.setup]
 nixPkgs = ["python311", "pip"]
@@ -7,5 +5,6 @@ nixPkgs = ["python311", "pip"]
 [phases.install]
 cmds = ["pip install -r requirements.txt"]
 
-[phases.start]
-cmds = ["python app.py"]
+[start]
+cmd = "python app.py"
+
